@@ -1,0 +1,37 @@
+server:
+  port: 9191
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/authsrv
+    username: root
+    password: Lib_Test
+    driver-class-name: org.mariadb.jdbc.Driver
+    initialization-mode: always
+  thymeleaf: # Thymeleaf
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    #prefix: classpath:/templates/
+    prefix: classpath:/templates/
+    resources: # Static resources
+      #static-locations: classpath:/static/
+      static-locations: classpath:/static/
+      cache:
+        period: 0
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+
+
+
+#MyDB@809
